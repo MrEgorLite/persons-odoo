@@ -1,0 +1,47 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_person_form" model="ir.ui.view">
+        <field name="name">person.form</field>
+        <field name="model">person.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="birthday"/>
+                        <field name="sex"/>
+                        <field name="company_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_person_tree" model="ir.ui.view">
+        <field name="name">person.tree</field>
+        <field name="model">person.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="birthday"/>
+                <field name="sex"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_person" model="ir.actions.act_window">
+        <field name="name">Persons</field>
+        <field name="res_model">person.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_person_root" name="Persons" sequence="10" groups="base.group_system"/>
+
+    <menuitem id="menu_person_main" name="Manage Persons" parent="menu_person_root" sequence="10" action="action_person" groups="base.group_system"/>
+</odoo>

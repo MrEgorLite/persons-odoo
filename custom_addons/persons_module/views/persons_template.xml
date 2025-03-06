@@ -1,0 +1,42 @@
+<odoo>
+    <template id="persons_template" name="Persons List">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="text-end mb-3">
+                    <a href="/persons/add" class="btn btn-primary">Add New Person</a>
+                </div>
+                <h1 class="text-center">Latest 5 Persons</h1>
+                <div class="row">
+                    <t t-foreach="persons" t-as="person">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm p-3 mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <t t-esc="person.full_name"/>
+                                    </h5>
+                                    <p class="card-text">
+                                        <strong>Sex:</strong>
+                                        <t t-if="person.sex">
+                                            <t t-esc="person.sex"/>
+                                        </t>
+                                    </p>
+                                    <p class="card-text">
+                                        <strong>Age:</strong>
+                                        <t t-if="person.birthday">
+                                            <t t-esc="person.age"/>
+                                        </t>
+                                        <t t-else="true">N/A</t>
+                                    </p>
+                                    <p class="card-text">
+                                        <strong>Company:</strong>
+                                        <t t-esc="person.company_id.name or 'N/A'"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
