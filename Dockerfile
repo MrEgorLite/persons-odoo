@@ -88,8 +88,10 @@ COPY . .
 # Setup Odoo user
 RUN adduser \
         --disabled-password \
-        --home "/home/django-user" \
+        --home "/home/odoo" \
         odoo
+
+RUN chown odoo /home/odoo
 
 # Expose Odoo services
 EXPOSE 8069 8071 8072
