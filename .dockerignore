@@ -1,0 +1,7 @@
+Dockerfile
+docker-compose.yml
+local.conf
+venv
+.idea/
+.idea/.gitignore
+.env

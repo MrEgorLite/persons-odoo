@@ -41,7 +41,7 @@
     </record>
 
     <!-- Menu Items -->
-    <menuitem id="menu_person_root" name="Persons" sequence="10" groups="base.group_system"/>
+    <menuitem id="menu_person_root" name="Persons" sequence="10"/>
 
-    <menuitem id="menu_person_main" name="Manage Persons" parent="menu_person_root" sequence="10" action="action_person" groups="base.group_system"/>
+    <menuitem id="menu_person_main" name="Manage Persons" parent="menu_person_root" sequence="10" action="action_person"/>
 </odoo>
